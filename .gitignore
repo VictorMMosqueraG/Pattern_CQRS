@@ -1,0 +1,37 @@
+# Build output directories
+bin/
+obj/
+
+# Publish output
+*.publish/
+
+# VSCode user-specific settings
+.vscode/
+.vscode/*
+
+# Local configuration files for Visual Studio / Rider
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# SDK-generated files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Debugging files
+*.pdb
+*.mdb
+
+# Backup or temporary editor files
+*~
+*.swp
+*.swo
+*.bak
+*.old
