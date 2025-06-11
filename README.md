@@ -6,6 +6,7 @@ To set up run this project, follow these steps:
 
 ## Table of Contents
 - [Backend Setup and Dependencies](#backend-setup-and-dependencies)
+- [Environment](#environments)
 
 ## Environments
 For this project it is using environments dev, stage and prod, copy a data from `appsettings.json` and create new file with the name `appsettings.Development.json`, `appsettings.Stagement.json` or `appsettings.Production.json`
