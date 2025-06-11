@@ -7,6 +7,9 @@ To set up run this project, follow these steps:
 ## Table of Contents
 - [Backend Setup and Dependencies](#backend-setup-and-dependencies)
 
+## Environments
+For this project it is using environments dev, stage and prod, copy a data from `appsettings.json` and create new file with the name `appsettings.Development.json`, `appsettings.Stagement.json` or `appsettings.Production.json`
+
 ## Backend Setup and Dependencies
 1. **Docker Setup**: Ensure that docker is installed on your system. Docker will be used to manage database container for the development environment. If yo don't have Docker installed, you can download and install it from the docker website.
 

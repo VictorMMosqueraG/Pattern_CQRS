@@ -35,3 +35,8 @@ artifacts/
 *.swo
 *.bak
 *.old
+
+##Environment files (development, stategement and production)
+appsettings.Development.json
+appsettings.Stagement.json
+appsettings.Production.json
