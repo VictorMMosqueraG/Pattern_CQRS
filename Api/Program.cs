@@ -1,19 +1,29 @@
 using System.IO;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace PatternCQRS.Api
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
 
-// Load configuration from the Api/ folder where appsettings files were moved.
-var basePath = Path.Combine(Directory.GetCurrentDirectory(), "Api");
-builder.Configuration.SetBasePath(basePath);
-builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
-builder.Configuration.AddEnvironmentVariables();
+            var basePath = Directory.GetCurrentDirectory();
+            builder.Configuration.SetBasePath(basePath);
+            builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+            builder.Configuration.AddEnvironmentVariables();
 
-// Use Startup to centralize registration and pipeline configuration
-var startup = new PatternCQRS.Api.Startup(builder.Configuration);
-startup.ConfigureServices(builder.Services);
+            var startup = new Startup(builder.Configuration);
+            startup.ConfigureServices(builder.Services);
 
-var app = builder.Build();
-startup.Configure(app, builder.Environment);
+            var app = builder.Build();
+            startup.Configure(app, builder.Environment);
 
-app.Run();
+            app.Run();
+        }
+    }
+}

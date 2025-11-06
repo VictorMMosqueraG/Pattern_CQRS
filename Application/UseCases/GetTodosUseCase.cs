@@ -1,5 +1,6 @@
 using PatternCQRS.Application.DTOs;
 using PatternCQRS.Domain.Ports;
+using System.Linq;
 
 namespace PatternCQRS.Application.UseCases;
 
